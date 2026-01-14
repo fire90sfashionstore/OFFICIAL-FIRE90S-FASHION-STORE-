@@ -44,23 +44,25 @@
             </div>
 
             <!-- Contact Form -->
-            <form
+            <form id="contactForm"
+                action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfQuLPDr3xPcLw6WOEbi_RwpLVrBRS8slZgTVb-ml0omPZTsg/formResponse"
+                method="POST" target="_blank"
                 style="background: var(--color-glass); padding: 40px; border-radius: 20px; border: 1px solid var(--color-glass-border);">
                 <div style="margin-bottom: 20px;">
                     <label style="display: block; margin-bottom: 10px; font-weight: 500;">Name</label>
-                    <input type="text" placeholder="Your Name"
+                    <input type="text" name="entry.1980386739" placeholder="Your Name" required
                         style="width: 100%; padding: 15px; background: rgba(0,0,0,0.3); border: 1px solid var(--color-glass-border); color: white; border-radius: 10px; font-family: inherit;">
                 </div>
 
                 <div style="margin-bottom: 20px;">
                     <label style="display: block; margin-bottom: 10px; font-weight: 500;">Email</label>
-                    <input type="email" placeholder="your@email.com"
+                    <input type="email" name="entry.1378532630" placeholder="your@email.com" required
                         style="width: 100%; padding: 15px; background: rgba(0,0,0,0.3); border: 1px solid var(--color-glass-border); color: white; border-radius: 10px; font-family: inherit;">
                 </div>
 
                 <div style="margin-bottom: 30px;">
                     <label style="display: block; margin-bottom: 10px; font-weight: 500;">Message</label>
-                    <textarea rows="5" placeholder="How can we help?"
+                    <textarea name="entry.429193216" rows="5" placeholder="How can we help?" required
                         style="width: 100%; padding: 15px; background: rgba(0,0,0,0.3); border: 1px solid var(--color-glass-border); color: white; border-radius: 10px; font-family: inherit; resize: vertical;"></textarea>
                 </div>
 
@@ -70,6 +72,16 @@
     </div>
 
     <footer id="footer"></footer>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmationModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2 style="margin-bottom: 15px;">Message <span class="fire-text">Sent!</span></h2>
+            <p style="margin-bottom: 25px; opacity: 0.9;">Thanks for reaching out! We'll get back to you faster than a
+                dial-up connection.</p>
+            <button onclick="closeModal()" class="btn">Close</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
