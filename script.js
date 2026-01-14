@@ -4,7 +4,7 @@
 const components = {
     navbar: `
         <div class="container nav-content">
-            <a href="index.html" class="logo">FIRE90S <span class="fire-text">FASHION STORE</span></a>
+            <a href="index.html" class="logo">FIRE90S FASHION <span class="fire-text">STORE</span></a>
             <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div>
             <div class="nav-links" id="navLinks">
                 <a href="index.html">Home</a>
@@ -16,7 +16,7 @@ const components = {
     footer: `
         <div class="container footer-content">
             <div class="footer-col">
-                <a href="index.html" class="logo">FIRE90S <span class="fire-text">FASHION STORE</span></a>
+                <a href="index.html" class="logo">FIRE90S FASHION <span class="fire-text">STORE</span></a>
                 <p style="margin-top: 1rem; opacity: 0.7; max-width: 300px;">
                     Premium 90s inspired fashion. Wholesale & Print on Demand services available.
                 </p>
