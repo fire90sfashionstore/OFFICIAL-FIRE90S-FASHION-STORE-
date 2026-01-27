@@ -30,10 +30,10 @@
 
 
 
-    <footer id="footer">
 
-        <!-- Hero Section -->
-        <header class="hero" style="
+
+    <!-- Hero Section -->
+    <header class="hero" style="
         min-height: 90vh; 
         display: flex; 
         align-items: center; 
@@ -43,159 +43,158 @@
         background-size: cover; 
         background-position: center;">
 
-            <div class="container hero-content">
-                <h1 style="font-size: 4rem; margin-bottom: 20px;">
-                    IGNITE YOUR <br><span class="fire-text">STYLE</span>
-                </h1>
-                <p style="font-size: 1.25rem; margin-bottom: 40px; opacity: 0.9;">
-                    The ultimate destination for 90s vintage vibes and modern fire fashion.<br>
-                    Wholesale & Print-on-Demand.
-                </p>
-                <a href="shop.html" class="btn">Shop Now</a>
-            </div>
-        </header>
+        <div class="container hero-content">
+            <h1 style="font-size: 4rem; margin-bottom: 20px;">
+                IGNITE YOUR <br><span class="fire-text">STYLE</span>
+            </h1>
+            <p style="font-size: 1.25rem; margin-bottom: 40px; opacity: 0.9;">
+                The ultimate destination for 90s vintage vibes and modern fire fashion.<br>
+                Wholesale & Print-on-Demand.
+            </p>
+            <a href="shop.html" class="btn">Shop Now</a>
+        </div>
+    </header>
 
-        <!-- Categories / Featured -->
-        <section class="container" style="padding: 100px 20px;">
-            <h2 style="text-align: center; margin-bottom: 60px;">Treading <span class="fire-text">Collections</span>
-            </h2>
+    <!-- Categories / Featured -->
+    <section class="container" style="padding: 100px 20px;">
+        <h2 style="text-align: center; margin-bottom: 60px;">Treading <span class="fire-text">Collections</span>
+        </h2>
 
-            <div class="carousel-wrapper">
-                <button class="scroll-btn left" onclick="scrollCollections('left')">&#10094;</button>
-                <div class="carousel-container" id="collectionCarousel">
+        <div class="carousel-wrapper">
+            <button class="scroll-btn left" onclick="scrollCollections('left')">&#10094;</button>
+            <div class="carousel-container" id="collectionCarousel">
 
-                    <!-- Category 1: Women -->
-                    <div class="cat-card"
-                        style="position: relative; border-radius: 20px; overflow: hidden; cursor: pointer;"
-                        onclick="window.location.href='shop.html?category=Custom%20Wholesale%20Dress'">
-                        <img src="assets/images/women_collection.png"
-                            style="width: 100%; height: 100%; object-fit: cover;" alt="Women's Fashion">
-                        <div
-                            style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
-                            <h3>Women's Collection</h3>
-                        </div>
-                    </div>
-
-                    <!-- Category 2: Men -->
-                    <div class="cat-card"
-                        style="position: relative; border-radius: 20px; overflow: hidden; cursor: pointer;"
-                        onclick="window.location.href='shop.html?category=Custom%20Streetwear%20Edition'">
-                        <img src="assets/images/men_collection.png"
-                            style="width: 100%; height: 100%; object-fit: cover;" alt="Men's Fashion">
-                        <div
-                            style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
-                            <h3>Men's Collection</h3>
-                        </div>
-                    </div>
-
-                    <!-- Category 3: Accessories -->
-                    <div class="cat-card"
-                        style="position: relative; border-radius: 20px; overflow: hidden; cursor: pointer;"
-                        onclick="window.location.href='shop.html?category=Gift%20Accessories'">
-                        <img src="assets/images/accessories_collection.png"
-                            style="width: 100%; height: 100%; object-fit: cover;" alt="Accessories">
-                        <div
-                            style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
-                            <h3>Accessories</h3>
-                        </div>
-                    </div>
-
-                    <!-- Category 4: Machineries -->
-                    <div class="cat-card"
-                        style="position: relative; border-radius: 20px; overflow: hidden; cursor: pointer;"
-                        onclick="window.location.href='shop.html?category=Machineries'">
-                        <img src="assets/images/machineries_collection.png"
-                            style="width: 100%; height: 100%; object-fit: cover;" alt="Machineries">
-                        <div
-                            style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
-                            <h3>Machineries</h3>
-                        </div>
-                    </div>
-
-                    <!-- Category 5: Wholesale -->
-                    <div class="cat-card"
-                        style="position: relative; border-radius: 20px; overflow: hidden; cursor: pointer;"
-                        onclick="window.location.href='shop.html?category=Custom%20Wholesale%20Dress'">
-                        <img src="assets/images/wholesale_collection.png"
-                            style="width: 100%; height: 100%; object-fit: cover;" alt="Wholesale Collection">
-                        <div
-                            style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
-                            <h3>Wholesale Collection</h3>
-                        </div>
-                    </div>
-
-                    <!-- Category 6: Print on Demand -->
-                    <div class="cat-card"
-                        style="position: relative; border-radius: 20px; overflow: hidden; cursor: pointer;"
-                        onclick="window.location.href='shop.html?category=DARE2DREAM%20TEE'">
-                        <img src="assets/images/pod_collection.png"
-                            style="width: 100%; height: 100%; object-fit: cover;" alt="Print on Demand">
-                        <div
-                            style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
-                            <h3>Print on Demand</h3>
-                        </div>
-                    </div>
-
-                </div>
-                <button class="scroll-btn right" onclick="scrollCollections('right')">&#10095;</button>
-            </div>
-        </section>
-
-        <!-- New Arrivals Section -->
-        <section class="container">
-            <div class="section-header">
-                <h2>New Arrivals 🔥</h2>
-                <a href="shop.html?sort=newest" class="section-view-all">View All</a>
-            </div>
-            <div class="product-grid-4" id="new-arrivals-container">
-                <!-- JS will load products here -->
-            </div>
-        </section>
-
-        <!-- Feature Split: Wholesale & Machineries -->
-        <section class="container">
-            <div class="feature-split">
-                <!-- Wholesale -->
-                <div class="feature-card"
+                <!-- Category 1: Women -->
+                <div class="cat-card"
+                    style="position: relative; border-radius: 20px; overflow: hidden; cursor: pointer;"
                     onclick="window.location.href='shop.html?category=Custom%20Wholesale%20Dress'">
-                    <img src="assets/images/wholesale_collection.png"
-                        style="width: 100%; height: 100%; object-fit: cover;" alt="Wholesale">
-                    <div class="feature-content">
-                        <h3>Wholesale Hub</h3>
-                        <p>Bulk orders for boutiques & resellers. Custom manufacturing available.</p>
-                        <span class="btn" style="padding: 10px 20px; font-size: 0.8rem;">Explore Wholesale</span>
+                    <img src="assets/images/women_collection.png" style="width: 100%; height: 100%; object-fit: cover;"
+                        alt="Women's Fashion">
+                    <div
+                        style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                        <h3>Women's Collection</h3>
                     </div>
                 </div>
-                <!-- Machineries -->
-                <div class="feature-card" onclick="window.location.href='shop.html?category=Machineries'">
+
+                <!-- Category 2: Men -->
+                <div class="cat-card"
+                    style="position: relative; border-radius: 20px; overflow: hidden; cursor: pointer;"
+                    onclick="window.location.href='shop.html?category=Custom%20Streetwear%20Edition'">
+                    <img src="assets/images/men_collection.png" style="width: 100%; height: 100%; object-fit: cover;"
+                        alt="Men's Fashion">
+                    <div
+                        style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                        <h3>Men's Collection</h3>
+                    </div>
+                </div>
+
+                <!-- Category 3: Accessories -->
+                <div class="cat-card"
+                    style="position: relative; border-radius: 20px; overflow: hidden; cursor: pointer;"
+                    onclick="window.location.href='shop.html?category=Gift%20Accessories'">
+                    <img src="assets/images/accessories_collection.png"
+                        style="width: 100%; height: 100%; object-fit: cover;" alt="Accessories">
+                    <div
+                        style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                        <h3>Accessories</h3>
+                    </div>
+                </div>
+
+                <!-- Category 4: Machineries -->
+                <div class="cat-card"
+                    style="position: relative; border-radius: 20px; overflow: hidden; cursor: pointer;"
+                    onclick="window.location.href='shop.html?category=Machineries'">
                     <img src="assets/images/machineries_collection.png"
                         style="width: 100%; height: 100%; object-fit: cover;" alt="Machineries">
-                    <div class="feature-content">
+                    <div
+                        style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
                         <h3>Machineries</h3>
-                        <p>High-tech printing & embroidery machines for your business.</p>
-                        <span class="btn" style="padding: 10px 20px; font-size: 0.8rem;">View Equipment</span>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Best Sellers Section -->
-        <section class="container">
-            <div class="section-header">
-                <h2>Best Sellers 🏆</h2>
-                <a href="shop.html?sort=bestsellers" class="section-view-all">View All</a>
-            </div>
-            <div class="product-grid-4" id="best-sellers-container">
-                <!-- JS will load products here -->
-            </div>
-        </section>
+                <!-- Category 5: Wholesale -->
+                <div class="cat-card"
+                    style="position: relative; border-radius: 20px; overflow: hidden; cursor: pointer;"
+                    onclick="window.location.href='shop.html?category=Custom%20Wholesale%20Dress'">
+                    <img src="assets/images/wholesale_collection.png"
+                        style="width: 100%; height: 100%; object-fit: cover;" alt="Wholesale Collection">
+                    <div
+                        style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                        <h3>Wholesale Collection</h3>
+                    </div>
+                </div>
 
-        <footer id="footer">
-            <!-- Javascript will load Footer here -->
-        </footer>
+                <!-- Category 6: Print on Demand -->
+                <div class="cat-card"
+                    style="position: relative; border-radius: 20px; overflow: hidden; cursor: pointer;"
+                    onclick="window.location.href='shop.html?category=DARE2DREAM%20TEE'">
+                    <img src="assets/images/pod_collection.png" style="width: 100%; height: 100%; object-fit: cover;"
+                        alt="Print on Demand">
+                    <div
+                        style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                        <h3>Print on Demand</h3>
+                    </div>
+                </div>
 
-        <script src="products.js"></script>
-        <script src="script.js"></script>
+            </div>
+            <button class="scroll-btn right" onclick="scrollCollections('right')">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- New Arrivals Section -->
+    <section class="container">
+        <div class="section-header">
+            <h2>New Arrivals 🔥</h2>
+            <a href="shop.html?sort=newest" class="section-view-all">View All</a>
+        </div>
+        <div class="product-grid-4" id="new-arrivals-container">
+            <!-- JS will load products here -->
+        </div>
+    </section>
+
+    <!-- Feature Split: Wholesale & Machineries -->
+    <section class="container">
+        <div class="feature-split">
+            <!-- Wholesale -->
+            <div class="feature-card" onclick="window.location.href='shop.html?category=Custom%20Wholesale%20Dress'">
+                <img src="assets/images/wholesale_collection.png" style="width: 100%; height: 100%; object-fit: cover;"
+                    alt="Wholesale">
+                <div class="feature-content">
+                    <h3>Wholesale Hub</h3>
+                    <p>Bulk orders for boutiques & resellers. Custom manufacturing available.</p>
+                    <span class="btn" style="padding: 10px 20px; font-size: 0.8rem;">Explore Wholesale</span>
+                </div>
+            </div>
+            <!-- Machineries -->
+            <div class="feature-card" onclick="window.location.href='shop.html?category=Machineries'">
+                <img src="assets/images/machineries_collection.png"
+                    style="width: 100%; height: 100%; object-fit: cover;" alt="Machineries">
+                <div class="feature-content">
+                    <h3>Machineries</h3>
+                    <p>High-tech printing & embroidery machines for your business.</p>
+                    <span class="btn" style="padding: 10px 20px; font-size: 0.8rem;">View Equipment</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Sellers Section -->
+    <section class="container">
+        <div class="section-header">
+            <h2>Best Sellers 🏆</h2>
+            <a href="shop.html?sort=bestsellers" class="section-view-all">View All</a>
+        </div>
+        <div class="product-grid-4" id="best-sellers-container">
+            <!-- JS will load products here -->
+        </div>
+    </section>
+
+    <footer id="footer">
+        <!-- Javascript will load Footer here -->
+    </footer>
+
+    <script src="products.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

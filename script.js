@@ -1,6 +1,7 @@
 // JS for FIRE90S Fashion Store
 
 // Shared Components Data
+// Shared Components Data
 const components = {
     navbar: `
         <div class="container nav-content">
@@ -26,8 +27,7 @@ const components = {
         </div>
     `,
     footer: `
-    footer: `
-        < div class= "container footer-content" >
+        <div class="container footer-content">
             <div class="footer-col">
                 <a href="index.html" class="logo">FIRE90S FASHION <span class="fire-text">STORE</span></a>
                 <p style="margin-top: 1rem; opacity: 0.7; max-width: 300px;">
@@ -50,13 +50,13 @@ const components = {
                     <li><a href="#">Returns</a></li>
                 </ul>
             </div>
-        </div >
-    <div class="copyright">
-        &copy; 2026 FIRE90S FASHION STORE. All rights reserved.
-    </div>
-`,
+        </div>
+        <div class="copyright">
+            &copy; 2026 FIRE90S FASHION STORE. All rights reserved.
+        </div>
+    `,
     cartSidebar: `
-    < div class="cart-overlay" id = "cartOverlay" onclick = "toggleCart()" ></div >
+        <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
         <div class="cart-sidebar" id="cartSidebar">
             <div class="cart-header">
                 <h3>Your Cart</h3>
@@ -73,7 +73,7 @@ const components = {
                 <button class="btn" style="width: 100%;">Checkout</button>
             </div>
         </div>
-`
+    `
 };
 
 // Cart State
@@ -167,15 +167,15 @@ function renderCartContents() {
         total += priceVal;
 
         html += `
-    < div class="cart-item" >
-        <img src="${item.img}" alt="${item.name}">
+        <div class="cart-item">
+            <img src="${item.img}" alt="${item.name}">
             <div class="cart-item-details">
                 <div class="cart-item-title">${item.name}</div>
                 <div class="cart-item-price">${item.price}</div>
             </div>
             <div class="remove-item" onclick="removeFromCart(${index})">🗑️</div>
         </div>
-`;
+        `;
     });
 
     cartBody.innerHTML = html;
@@ -206,7 +206,7 @@ function renderProducts(category = 'all') {
     let html = '';
     filtered.forEach(p => {
         html += `
-    < div class="product-card" onclick = "window.location.href='product-detail.html?id=${p.id}'" style = "background: var(--color-glass); border: 1px solid var(--color-glass-border); border-radius: 15px; overflow: hidden; transition: 0.3s; cursor: pointer;" >
+            <div class="product-card" onclick="window.location.href='product-detail.html?id=${p.id}'" style="background: var(--color-glass); border: 1px solid var(--color-glass-border); border-radius: 15px; overflow: hidden; transition: 0.3s; cursor: pointer;">
                 <div style="height: 300px; overflow: hidden; background: #222;">
                     <img src="${p.img}" style="width: 100%; height: 100%; object-fit: cover;" alt="${p.name}">
                 </div>
@@ -217,8 +217,8 @@ function renderProducts(category = 'all') {
                     <button class="btn" style="width: 100%; font-size: 0.9rem; padding: 10px; margin-bottom: 5px;" onclick="event.stopPropagation(); addToCart(${p.id})">Add to Cart</button>
                     <button class="btn" style="width: 100%; font-size: 0.9rem; padding: 10px; background: transparent; border: 1px solid var(--color-primary);" onclick="window.location.href='product-detail.html?id=${p.id}'">View Details</button>
                 </div>
-            </div >
-    `;
+            </div>
+        `;
     });
     grid.innerHTML = html;
 }
@@ -280,7 +280,7 @@ function renderBestSellers() {
 
 function createProductCardHTML(p) {
     return `
-    < div class="product-card" onclick = "window.location.href='product-detail.html?id=${p.id}'" style = "background: var(--color-glass); border: 1px solid var(--color-glass-border); border-radius: 15px; overflow: hidden; transition: 0.3s; cursor: pointer;" >
+        <div class="product-card" onclick="window.location.href='product-detail.html?id=${p.id}'" style="background: var(--color-glass); border: 1px solid var(--color-glass-border); border-radius: 15px; overflow: hidden; transition: 0.3s; cursor: pointer;">
             <div style="height: 300px; overflow: hidden; background: #222;">
                 <img src="${p.img}" style="width: 100%; height: 100%; object-fit: cover;" alt="${p.name}">
             </div>
@@ -290,7 +290,7 @@ function createProductCardHTML(p) {
                 <p style="color: var(--color-primary); font-weight: 700; font-size: 1.1rem; margin-bottom: 15px;">${p.price}</p>
                  ${p.price.includes('Contact') ? '' : `<button class="btn" style="width: 100%; font-size: 0.9rem; padding: 10px; margin-bottom: 5px;" onclick="event.stopPropagation(); addToCart(${p.id})">Add to Cart</button>`}
             </div>
-        </div >
+        </div>
     `;
 }
 
@@ -329,19 +329,19 @@ function openShareModal() {
     if (!modal) {
         // Create modal
         const modalHtml = `
-    < div id = "shareModal" class="share-modal" onclick = "closeShareModal(event)" >
-                <div class="share-content" onclick="event.stopPropagation()">
-                    <h3 style="margin-bottom: 10px;">Share this Product</h3>
-                    <p style="opacity: 0.7; margin-bottom: 20px;">Share with friends and family!</p>
-                    <div class="share-options">
-                        <button class="share-btn whatsapp" onclick="shareTo(\"whatsapp\")" title="WhatsApp"><span style="font-size: 1.5rem">??</span></button>
-                        <button class="share-btn facebook" onclick="shareTo(\"facebook\")" title="Facebook"><span style="font-size: 1.5rem">??</span></button>
-                        <button class="share-btn copy-link" onclick="copyProductLink()" title="Copy Link"><span style="font-size: 1.5rem">??</span></button>
-                    </div >
-    <button class="btn" style="margin-top: 25px; padding: 10px 25px; background: transparent; border: 1px solid white;" onclick="closeShareModal(null)">Close</button>
-                </div >
-            </div >
-    `;
+        <div id="shareModal" class="share-modal" onclick="closeShareModal(event)">
+            <div class="share-content" onclick="event.stopPropagation()">
+                <h3 style="margin-bottom: 10px;">Share this Product</h3>
+                <p style="opacity: 0.7; margin-bottom: 20px;">Share with friends and family!</p>
+                <div class="share-options">
+                    <button class="share-btn whatsapp" onclick="shareTo('whatsapp')" title="WhatsApp"><span style="font-size: 1.5rem">💬</span></button>
+                    <button class="share-btn facebook" onclick="shareTo('facebook')" title="Facebook"><span style="font-size: 1.5rem">📘</span></button>
+                    <button class="share-btn copy-link" onclick="copyProductLink()" title="Copy Link"><span style="font-size: 1.5rem">🔗</span></button>
+                </div>
+                <button class="btn" style="margin-top: 25px; padding: 10px 25px; background: transparent; border: 1px solid white;" onclick="closeShareModal(null)">Close</button>
+            </div>
+        </div>
+        `;
         document.body.insertAdjacentHTML("beforeend", modalHtml);
         modal = document.getElementById("shareModal");
     }
@@ -363,8 +363,8 @@ function shareTo(platform) {
     if (platform === "whatsapp") {
         window.open(`https://wa.me/?text=${text}%20${url}`, "_blank");
     } else if (platform === "facebook") {
-    window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, "_blank");
-}
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, "_blank");
+    }
 }
 
 function copyProductLink() {
