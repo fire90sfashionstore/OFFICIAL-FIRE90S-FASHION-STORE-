@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - FIRE90S FASHION STORE</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar" id="navbar"></nav>
+
+    <div class="container" style="padding: 120px 20px 60px;">
+        <h1 style="text-align: center; margin-bottom: 20px;">All <span class="fire-text">Products</span></h1>
+        <p style="text-align: center; margin-bottom: 60px; color: rgba(255,255,255,0.6);">Browse our exclusive
+            collection of 90s inspired wear.</p>
+
+        <!-- Category Filter -->
+        <div class="filter-container"
+            style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px;">
+            <button class="filter-btn active" onclick="filterProducts('all')">All</button>
+            <button class="filter-btn" onclick="filterProducts('Gift Accessories')">Gift Accessories</button>
+            <button class="filter-btn" onclick="filterProducts('Custom Wholesale Dress')">Custom Wholesale
+                Dress</button>
+            <button class="filter-btn" onclick="filterProducts('Machineries')">Machineries</button>
+            <button class="filter-btn" onclick="filterProducts('DARE2DREAM TEE')">DARE2DREAM TEE</button>
+            <button class="filter-btn" onclick="filterProducts('Custom Streetwear Edition')">Custom Streetwear
+                Edition</button>
+        </div>
+
+        <!-- Product Grid -->
+        <div id="product-grid" class="grid" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));">
+            <!-- JS will populate products here -->
+            <p>Loading products...</p>
+        </div>
+    </div>
+
+    <footer id="footer"></footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

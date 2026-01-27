@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - FIRE90S FASHION STORE</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar" id="navbar"></nav>
+
+    <div class="container" style="padding: 120px 20px 80px;">
+        <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+
+            <!-- Contact Info -->
+            <div>
+                <h1 style="margin-bottom: 20px;">Get in <span class="fire-text">Touch</span></h1>
+                <p style="opacity: 0.8; margin-bottom: 40px; font-size: 1.1rem;">
+                    Have questions about Wholesale or Print-on-Demand? We're here to help you ignite your business.
+                </p>
+
+                <div style="margin-bottom: 30px;">
+                    <h3 style="color: var(--color-primary); margin-bottom: 10px;">Email Us</h3>
+                    <p>hello@fire90sfashion.store</p>
+                </div>
+
+                <div style="margin-bottom: 30px;">
+                    <h3 style="color: var(--color-primary); margin-bottom: 10px;">Location</h3>
+                    <p>123 Fashion Street, Retro District,<br>New York, NY 10012</p>
+                </div>
+
+                <div style="margin-bottom: 30px;">
+                    <h3 style="color: var(--color-primary); margin-bottom: 10px;">Hours</h3>
+                    <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <form id="contactForm"
+                action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfQuLPDr3xPcLw6WOEbi_RwpLVrBRS8slZgTVb-ml0omPZTsg/formResponse"
+                method="POST" target="hidden_iframe"
+                style="background: var(--color-glass); padding: 40px; border-radius: 20px; border: 1px solid var(--color-glass-border);">
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 10px; font-weight: 500;">Name</label>
+                    <input type="text" name="entry.1980386739" placeholder="Your Name" required
+                        style="width: 100%; padding: 15px; background: rgba(0,0,0,0.3); border: 1px solid var(--color-glass-border); color: white; border-radius: 10px; font-family: inherit;">
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 10px; font-weight: 500;">Email</label>
+                    <input type="email" name="entry.1378532630" placeholder="your@email.com" required
+                        style="width: 100%; padding: 15px; background: rgba(0,0,0,0.3); border: 1px solid var(--color-glass-border); color: white; border-radius: 10px; font-family: inherit;">
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 10px; font-weight: 500;">Whatsapp Number</label>
+                    <input type="tel" name="entry.1691037027" placeholder="+919061150941"
+                        style="width: 100%; padding: 15px; background: rgba(0,0,0,0.3); border: 1px solid var(--color-glass-border); color: white; border-radius: 10px; font-family: inherit;">
+                </div>
+
+                <div style="margin-bottom: 30px;">
+                    <label style="display: block; margin-bottom: 10px; font-weight: 500;">Message</label>
+                    <textarea name="entry.429193216" rows="5" placeholder="How can we help?" required
+                        style="width: 100%; padding: 15px; background: rgba(0,0,0,0.3); border: 1px solid var(--color-glass-border); color: white; border-radius: 10px; font-family: inherit; resize: vertical;"></textarea>
+                </div>
+
+                <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Hidden Iframe to capture submission -->
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+    <footer id="footer"></footer>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmationModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2 style="margin-bottom: 15px;">Message <span class="fire-text">Sent!</span></h2>
+            <p style="margin-bottom: 25px; opacity: 0.9;">Thanks for reaching out! We'll get back to you faster than a
+                dial-up connection.</p>
+            <button onclick="closeModal()" class="btn">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
