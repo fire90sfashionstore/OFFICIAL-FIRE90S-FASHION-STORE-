@@ -740,3 +740,60 @@ body {
     opacity: 0.9;
 }
 
+
+/* Layout Fixes & Refinements */
+
+/* Increase Z-Index to prevent overlap */
+.navbar {
+    z-index: 2000 !important;
+}
+.top-bar {
+    z-index: 2001 !important;
+}
+
+/* Navbar Layout */
+.nav-content {
+    justify-content: space-between;
+}
+
+/* Mobile Controls Styling */
+/* Default: Cart visible, Hamburger hidden (Desktop) */
+.mobile-controls {
+    display: flex; 
+    align-items: center; 
+    gap: 20px;
+}
+.mobile-menu-btn {
+    display: none; /* Hidden on Desktop */
+}
+.cart-icon-container {
+    display: flex; /* Visible on Desktop */
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block; /* Show on Mobile */
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+    
+    .nav-links {
+        /* Ensure dropdown behaves correctly if not already handled */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(10, 10, 10, 0.95);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        display: none; /* Hidden by default */
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--color-glass-border);
+    }
+    .nav-links.active {
+        display: flex;
+    }
+}
+
