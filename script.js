@@ -234,6 +234,10 @@ function filterProducts(category) {
 document.addEventListener('DOMContentLoaded', () => {
     renderComponents();
 
+    // Render Home Sections if containers exist
+    renderNewArrivals();
+    renderBestSellers();
+
     // Check for category filter in URL
     const urlParams = new URLSearchParams(window.location.search);
     const categoryParam = urlParams.get('category');
@@ -245,19 +249,56 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         renderProducts();
     }
-
-    // Contact Form Handling
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', () => {
-            // Show modal after a short delay (simulating submission)
-            setTimeout(() => {
-                document.getElementById('confirmationModal').style.display = 'flex';
-                contactForm.reset();
-            }, 500);
-        });
-    }
 });
+
+function renderNewArrivals() {
+    const container = document.getElementById('new-arrivals-container');
+    if (!container) return; // Only on pages with this container
+
+    // Simulating "New Arrivals": taking first 4 products
+    const newArrivals = products.slice(0, 4);
+
+    container.innerHTML = newArrivals.map(p => createProductCardHTML(p)).join('');
+}
+
+function renderBestSellers() {
+    const container = document.getElementById('best-sellers-container');
+    if (!container) return;
+
+    // Simulating "Best Sellers": taking 4 random products (e.g. index 4-8)
+    const bestSellers = products.slice(4, 8);
+
+    container.innerHTML = bestSellers.map(p => createProductCardHTML(p)).join('');
+}
+
+function createProductCardHTML(p) {
+    return `
+        <div class="product-card" onclick="window.location.href='product-detail.html?id=${p.id}'" style="background: var(--color-glass); border: 1px solid var(--color-glass-border); border-radius: 15px; overflow: hidden; transition: 0.3s; cursor: pointer;">
+            <div style="height: 300px; overflow: hidden; background: #222;">
+                <img src="${p.img}" style="width: 100%; height: 100%; object-fit: cover;" alt="${p.name}">
+            </div>
+            <div style="padding: 20px;">
+                <h3 style="font-size: 1.2rem; margin-bottom: 5px;">${p.name}</h3>
+                <p style="font-size: 0.8rem; opacity: 0.6; margin-bottom: 10px;">${p.category}</p>
+                <p style="color: var(--color-primary); font-weight: 700; font-size: 1.1rem; margin-bottom: 15px;">${p.price}</p>
+                 ${p.price.includes('Contact') ? '' : `<button class="btn" style="width: 100%; font-size: 0.9rem; padding: 10px; margin-bottom: 5px;" onclick="event.stopPropagation(); addToCart(${p.id})">Add to Cart</button>`}
+            </div>
+        </div>
+    `;
+}
+
+// Contact Form Handling
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', () => {
+        // Show modal after a short delay (simulating submission)
+        setTimeout(() => {
+            document.getElementById('confirmationModal').style.display = 'flex';
+            contactForm.reset();
+        }, 500);
+    });
+}
+
 
 function closeModal() {
     document.getElementById('confirmationModal').style.display = 'none';
@@ -311,7 +352,7 @@ function closeShareModal(event) {
 function shareTo(platform) {
     const url = encodeURIComponent(window.location.href);
     const text = encodeURIComponent("Check out this awesome product from FIRE90S FASHION STORE! ??");
-    
+
     if (platform === "whatsapp") {
         window.open(`https://wa.me/?text=${text}%20${url}`, "_blank");
     } else if (platform === "facebook") {
