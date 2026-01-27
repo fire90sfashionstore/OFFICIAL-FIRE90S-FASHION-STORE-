@@ -83,7 +83,7 @@
                         <p style="font-size: 0.9rem;">${product.returns || 'Standard return policy applies.'}</p>
                     </div>
 
-                    <button class="btn" style="width: 100%; padding: 15px; font-size: 1.1rem;">Add to Cart</button>
+                    <button class="btn" style="width: 100%; padding: 15px; font-size: 1.1rem;" onclick="addToCart(${product.id})">Add to Cart</button>
                     <button class="btn" style="width: 100%; padding: 15px; font-size: 1.1rem; background: transparent; border: 1px solid var(--color-primary); margin-top: 10px;">Buy Now</button>
                 </div>
             `;

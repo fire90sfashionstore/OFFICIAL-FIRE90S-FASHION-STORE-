@@ -9,7 +9,13 @@ const components = {
             <div class="nav-links" id="navLinks">
                 <a href="index.html">Home</a>
                 <a href="shop.html">Shop</a>
-                <a href="contact.html">Contact</a>
+                <div style="display: flex; gap: 20px; align-items: center;">
+                    <a href="contact.html">Contact</a>
+                    <div class="cart-icon-container" onclick="toggleCart()">
+                        <span style="font-size: 1.2rem;">🛒</span>
+                        <div class="cart-count" id="cartCount">0</div>
+                    </div>
+                </div>
             </div>
         </div>
     `,
@@ -41,8 +47,30 @@ const components = {
         <div class="copyright">
             &copy; 2026 FIRE90S FASHION STORE. All rights reserved.
         </div>
+    `,
+    cartSidebar: `
+        <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+        <div class="cart-sidebar" id="cartSidebar">
+            <div class="cart-header">
+                <h3>Your Cart</h3>
+                <div class="close-cart" onclick="toggleCart()">×</div>
+            </div>
+            <div class="cart-body" id="cartBody">
+                <!-- Cart Items will be rendered here -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cartTotal">$0.00</span>
+                </div>
+                <button class="btn" style="width: 100%;">Checkout</button>
+            </div>
+        </div>
     `
 };
+
+// Cart State
+let cart = JSON.parse(localStorage.getItem('fire90s_cart')) || [];
 
 // Render Components
 function renderComponents() {
@@ -52,6 +80,11 @@ function renderComponents() {
     if (navContainer) navContainer.innerHTML = components.navbar;
     if (footerContainer) footerContainer.innerHTML = components.footer;
 
+    // Inject Cart Sidebar
+    if (!document.getElementById('cartSidebar')) {
+        document.body.insertAdjacentHTML('beforeend', components.cartSidebar);
+    }
+
     // Set active link
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const links = document.querySelectorAll('.nav-links a');
@@ -60,12 +93,86 @@ function renderComponents() {
             link.classList.add('active');
         }
     });
+
+    updateCartUI();
 }
 
 // Mobile Menu Toggle
 function toggleMenu() {
     const navLinks = document.getElementById('navLinks');
     navLinks.classList.toggle('active');
+}
+
+// Cart Functions
+function toggleCart() {
+    const sidebar = document.getElementById('cartSidebar');
+    const overlay = document.getElementById('cartOverlay');
+    sidebar.classList.toggle('active');
+    overlay.classList.toggle('active');
+    renderCartContents();
+}
+
+function addToCart(productId) {
+    const product = products.find(p => p.id === productId);
+    if (product) {
+        cart.push(product);
+        localStorage.setItem('fire90s_cart', JSON.stringify(cart));
+        updateCartUI();
+
+        // Open sidebar to show added item
+        const sidebar = document.getElementById('cartSidebar');
+        if (!sidebar.classList.contains('active')) {
+            toggleCart();
+        } else {
+            renderCartContents();
+        }
+    }
+}
+
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    localStorage.setItem('fire90s_cart', JSON.stringify(cart));
+    updateCartUI();
+    renderCartContents();
+}
+
+function updateCartUI() {
+    const count = document.getElementById('cartCount');
+    if (count) count.innerText = cart.length;
+}
+
+function renderCartContents() {
+    const cartBody = document.getElementById('cartBody');
+    const cartTotal = document.getElementById('cartTotal');
+
+    if (cart.length === 0) {
+        cartBody.innerHTML = '<p style="text-align: center; opacity: 0.6; margin-top: 50px;">Your cart is empty.</p>';
+        cartTotal.innerText = '$0.00';
+        return;
+    }
+
+    let html = '';
+    let total = 0;
+
+    cart.forEach((item, index) => {
+        // Parse price removing $ sign
+        const priceVal = parseFloat(item.price.replace(/[^0-9.]/g, '')) || 0;
+        total += priceVal;
+
+        html += `
+            <div class="cart-item">
+                <img src="${item.img}" alt="${item.name}">
+                <div class="cart-item-details">
+                    <div class="cart-item-title">${item.name}</div>
+                    <div class="cart-item-price">${item.price}</div>
+                </div>
+                <div class="remove-item" onclick="removeFromCart(${index})">🗑️</div>
+            </div>
+        `;
+    });
+
+    cartBody.innerHTML = html;
+    cartTotal.innerText = '$' + total.toFixed(2);
 }
 
 // Product Functions
@@ -100,7 +207,8 @@ function renderProducts(category = 'all') {
                     <h3 style="font-size: 1.2rem; margin-bottom: 5px;">${p.name}</h3>
                     <p style="font-size: 0.8rem; opacity: 0.6; margin-bottom: 10px;">${p.category}</p>
                     <p style="color: var(--color-primary); font-weight: 700; font-size: 1.1rem; margin-bottom: 15px;">${p.price}</p>
-                    <button class="btn" style="width: 100%; font-size: 0.9rem; padding: 10px;">View Details</button>
+                    <button class="btn" style="width: 100%; font-size: 0.9rem; padding: 10px; margin-bottom: 5px;" onclick="event.stopPropagation(); addToCart(${p.id})">Add to Cart</button>
+                    <button class="btn" style="width: 100%; font-size: 0.9rem; padding: 10px; background: transparent; border: 1px solid var(--color-primary);" onclick="window.location.href='product-detail.html?id=${p.id}'">View Details</button>
                 </div>
             </div>
         `;
