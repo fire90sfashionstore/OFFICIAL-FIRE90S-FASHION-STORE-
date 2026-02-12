@@ -70,6 +70,7 @@ a {
 
 .fire-text {
     background: var(--gradient-fire);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
@@ -664,32 +665,6 @@ body {
     }
 }
 
-
-/* Marquee Animation */
-.top-bar {
-    overflow: hidden;
-    position: fixed;
-    width: 100%;
-    z-index: 2000;
-}
-
-.marquee-text {
-    display: inline-block;
-    white-space: nowrap;
-    animation: scroll-left 20s linear infinite;
-    padding-left: 100%;
-    /* Start from right */
-}
-
-@keyframes scroll-left {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-100%);
-    }
-}
 
 /* Mobile Category Grid (App-like) */
 @media (max-width: 768px) {
