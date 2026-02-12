@@ -7,6 +7,14 @@ const components = {
         <div class="container nav-content">
             <a href="index.html" class="logo">FIRE90S FASHION <span class="fire-text">STORE</span></a>
             
+
+            <!-- Desktop/Mobile Menu Links -->
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
             <div style="display: flex; align-items: center; gap: 15px;" class="mobile-controls">
                 <!-- Cart Icon (Always Visible) -->
                 <div class="cart-icon-container" onclick="toggleCart()">
@@ -18,12 +26,6 @@ const components = {
                 <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div>
             </div>
 
-            <!-- Desktop/Mobile Menu Links -->
-            <div class="nav-links" id="navLinks">
-                <a href="index.html">Home</a>
-                <a href="shop.html">Shop</a>
-                <a href="contact.html">Contact</a>
-            </div>
         </div>
     `,
     footer: `
